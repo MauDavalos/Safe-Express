@@ -1,13 +1,14 @@
+"use strict";
 const mysql = require('mysql');
 var express = require('express');
 var bodyparser = require('body-parser');
 var session = require('express-session');
-const bcrypt = require('bcrypt')
-
+const bcrypt = require('bcrypt');
 
 var app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
+app.use(require('./routes/index')); // auth de firebase
 
 
 var myPORT = process.env.PORT || 3000; 
