@@ -187,7 +187,7 @@ var today = new Date();
          mysqlConnection.query(queryString, [clienteCorreo], (err, rows, fields) => {
             res.json(rows[0])
         })
-        //res.end()
+    
     })
 
     app.get("/chofer/:correo", (req,res) => {

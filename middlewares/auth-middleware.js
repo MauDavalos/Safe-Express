@@ -1,6 +1,5 @@
 const admin = require("../firebase/firebase-service"); 
 
-
 const getAuthToken = (req, res, next) => {
   if (
     req.headers.authorization &&
@@ -12,7 +11,6 @@ const getAuthToken = (req, res, next) => {
   }
   next();
 };
-
 
 const checkIfAuthenticated = (req, res, next) => {
  getAuthToken(req, res, async () => {
@@ -26,7 +24,7 @@ const checkIfAuthenticated = (req, res, next) => {
     } catch (e) {
       return res
         .status(401)
-        .send({ error: 'You are not authorized to make this request' });
+        .send({ error: 'No estás autorizado para realizar esta petición' });
     }
   });
 };
