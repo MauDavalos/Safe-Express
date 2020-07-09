@@ -1,11 +1,7 @@
-module.exports = {
-    'connection':{
-     'host':'localhost',
-     'user':'root',
-     'password':'',
-     'database':'safe_express'
-    }
-    
-}
+const Sequelize = require('sequelize');
 
-  
+module.exports =  new Sequelize('safe_express', 'root', '',{
+  host: 'localhost',
+  dialect: 'mysql'
+});
+
