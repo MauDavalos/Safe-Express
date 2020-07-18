@@ -1,39 +1,32 @@
+"use strict";
 const mysql = require('mysql');
 var express = require('express');
 var bodyparser = require('body-parser');
 var session = require('express-session');
-const bcrypt = require('bcrypt')
-
-
+const bcrypt = require('bcrypt');
 var app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
+app.use(require('./routes/index')); // routes
 
+const db = require('./config/database');
 
-var myPORT = process.env.PORT || 3000; 
+db.authenticate()
+  .then(() => console.log('Database connected...'))
+  .catch(err => console.log('Error: ' + err))
 
-const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'safe_express'
-});
+const PORT = process.env.PORT || 3000;
 
-mysqlConnection.connect((err) => 
-{
-    if (!err)
-        console.log('DB connection succeded.');
-    else
-        console.log('DB connection failed \n Error : ' + JSON.stringify(err, undefined, 2));
-});
-
-app.listen(myPORT, () => console.log('Express server is runnig at port no : 3000'));
-
+app.listen(PORT, console.log(`Server started on port ${PORT}`));
 
 var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     var dateTime = date+' '+time;
+
+    app.get("/", (req,res) =>{
+        console.log('hola');
+    })
 
 
 
@@ -186,7 +179,7 @@ var today = new Date();
          mysqlConnection.query(queryString, [clienteCorreo], (err, rows, fields) => {
             res.json(rows[0])
         })
-        //res.end()
+    
     })
 
     app.get("/chofer/:correo", (req,res) => {
