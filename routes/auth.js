@@ -8,7 +8,8 @@ const router = Router();
 router.post('/auth/signup', createUser);
 
 router.get('/', checkIfAuthenticated, async (_, res) => {
-  
+  console.log('hola');
+  res.send('approved!');
 });
 
 module.exports = router;
