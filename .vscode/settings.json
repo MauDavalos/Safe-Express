@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/1028ec36-d6a3-4ee0-a5e3-69e8881055fc/resourceGroups/safe-express-rest-azureG/providers/Microsoft.Web/sites/safe-express-rest-azure",
-    "appService.deploySubpath": "."
-}
