@@ -6,7 +6,7 @@ module.exports = {
 
         try {
 
-            const userCollection = await User.find({});
+            const userCollection = await User.findAll({});
 
             res.status(201).send(userCollection);
 
