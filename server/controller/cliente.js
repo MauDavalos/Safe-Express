@@ -42,7 +42,7 @@ module.exports = {
     async update(req,res) {
 
         try{
-            const clienteCollection = await Cliente.find({
+            const clienteCollection = await Cliente.findAll({
                 id : req.params.clienteId
             });
 
