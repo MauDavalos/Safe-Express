@@ -3,6 +3,8 @@ const postController = require('../controller').post;
 const clienteController = require('../controller').cliente;
 const choferController = require('../controller').chofer;
 const encomiendaController = require('../controller').encomienda;
+const origenController = require('../controller').origen;
+const destinoController = require('../controller').destino;
 
 module.exports = (app) => {
 
@@ -22,7 +24,7 @@ module.exports = (app) => {
 
     app.post('/api/post/create',postController.createPost);
 
-    app.put('/api/:postId',postController.update);
+    app.put('/api/post/:postId',postController.update);
 
     //////////////////////
 
@@ -46,9 +48,21 @@ module.exports = (app) => {
 
     app.post('/api/encomienda/create',encomiendaController.createEncomienda);
 
-    app.put('/api/:encomiendaId',encomiendaController.update);
+    app.put('/api/encomienda/:encomiendaId',encomiendaController.update);
 
     //////////////////////
+
+    app.get('/api/origenes',origenController.getAllOrigenes);
+
+    app.post('/api/origen/create',origenController.create);
+
+    app.put('/api/origen/:origenId',origenController.update);
+
+    app.get('/api/destinos',destinoController.getAllDestinos);
+
+    app.post('/api/destino/create',destinoController.create);
+
+    app.put('/api/destino/:destinoId',destinoController.update);
 
 
 
