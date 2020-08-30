@@ -24,12 +24,12 @@ module.exports = {
             const destinoCollection = await Destino
             .create({
 
-                callePrincipal : req.body.callePrincipal,
-                calleSecundaria : req.body.calleSecundaria,
-                referencia : req.body.referencia,
-                horaLlegada : req.body.horaLlegada,
-                latitud : req.body.latitud,
-                longitud : req.body.longitud
+                callePrincipalDestino : req.body.callePrincipalDestino,
+                calleSecundariaDestino : req.body.calleSecundariaDestino,
+                referenciaDestino : req.body.referenciaDestino,
+                horaLlegadaDestino : req.body.horaLlegadaDestino,
+                latitudDestino : req.body.latitudDestino,
+                longitudDestino : req.body.longitudDestino
             });
 
             res.status(201).send(destinoCollection);
@@ -51,12 +51,12 @@ module.exports = {
             if(destinoCollection){
 
                 const updatedDestino = await Destino.update({
-                    callePrincipal : req.body.callePrincipal,
-                    calleSecundaria : req.body.calleSecundaria,
-                    referencia : req.body.referencia,
-                    horaLlegada : req.body.horaLlegada,
-                    latitud : req.body.latitud,
-                    longitud : req.body.longitud                 
+                    callePrincipalDestino : req.body.callePrincipalDestino,
+                    calleSecundariaDestino : req.body.calleSecundariaDestino,
+                    referenciaDestino : req.body.referenciaDestino,
+                    horaLlegadaDestino : req.body.horaLlegadaDestino,
+                    latitudDestino : req.body.latitudDestino,
+                    longitudDestino : req.body.longitudDestino                 
                 });
 
                 res.status(201).send(updatedDestino)

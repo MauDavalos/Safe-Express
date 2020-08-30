@@ -4,7 +4,7 @@ const Chofer = require('../models').Chofer;
 
 module.exports = {
 
-    async getAllEncomiendasOfCliente(req,res) {
+     async getAllEncomiendasOfCliente(req,res) {
         try {
             const clienteCollection = await Cliente.findAll({
                 id : req.params.clienteId

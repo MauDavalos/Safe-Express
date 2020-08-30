@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "mau",
-    "database": "test2db",
+    "database": "db_hoy",
     "host": "localhost",
     "port" : 5432,
     "dialect": "postgres"
