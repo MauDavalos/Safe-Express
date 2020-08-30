@@ -1,44 +1,37 @@
 module.exports = {
     up: (queryInterface, Sequelize) =>
-      queryInterface.createTable('Encomiendas', {
+      queryInterface.createTable('Direccions', {
         id: {
           allowNull: false,
           autoIncrement: true,
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        id_tracking: {
-          type: Sequelize.INTEGER,
-          allowNull: false,
-        },
-        estado: {
-          type: Sequelize.STRING,
-          allowNull: false,
-        },
-        fecha: {
-            type: Sequelize.DATE,
-            allowNull: false,
-          },
-        hora: {
-          type: Sequelize.DATE,
-          allowNull: false,
-        },
-        clienteId : {
+        origenId : {
             type : Sequelize.INTEGER,
             onDelete : 'CASCADE',
             references : {
-                model : 'Clientes',
+                model : 'Origens',
                 key : 'id',
-                as : 'clienteId'
+                as : 'origenId'
             },
         },
-        choferId : {
+        destinoId : {
             type : Sequelize.INTEGER,
             onDelete : 'CASCADE',
             references : {
-                model : 'Chofers',
+                model : 'Destinos',
                 key : 'id',
-                as : 'choferId'
+                as : 'destinoId'
+            },
+        },
+        encomiendaId : {
+            type : Sequelize.INTEGER,
+            onDelete : 'CASCADE',
+            references : {
+                model : 'Encomiendas',
+                key : 'id',
+                as : 'encomiendaId'
             },
         },
         createdAt: {
@@ -50,5 +43,5 @@ module.exports = {
           type: Sequelize.DATE,
         }
       }),
-    down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Encomiendas'),
+    down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Direccions'),
   };

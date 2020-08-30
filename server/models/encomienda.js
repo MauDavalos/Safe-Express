@@ -20,6 +20,31 @@ module.exports = (sequelize,DataTypes) => {
         });   
     };
 
+    Encomienda.associate = function(models) {
+        Encomienda.hasMany(models.Direccion,{
+            foreignKey : 'encomiendaId',
+            as : 'direcciones'
+        });
+    };
+
+    Encomienda.associate = function(models){
+        Encomienda.belongsToMany(models.Origen,{
+            through: 'direccion',
+            foreignKey: 'encomiendaId',
+            otherKey:'origenId'
+        });
+    };
+
+    Encomienda.associate = function(models){
+        Encomienda.belongsToMany(models.Destino,{
+            through: 'direccion',
+            foreignKey: 'encomiendaId',
+            otherKey:'destinoId'
+        });
+    };
+
+    
+
     return Encomienda;
 }
 

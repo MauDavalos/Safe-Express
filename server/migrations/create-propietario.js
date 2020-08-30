@@ -34,7 +34,7 @@ module.exports = {
         updatedAt: {
           allowNull: false,
           type: Sequelize.DATE,
-        },
+        }
       }),
     down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Propietarios'),
   };

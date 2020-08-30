@@ -1,19 +1,29 @@
 
 module.exports = (sequelize,DataTypes) => {
     let Origen = sequelize.define('Origen',{
-        callePrincipal : DataTypes.STRING,
-        calleSecundaria : DataTypes.STRING,
-        referencia : DataTypes.STRING,
-        horaInicio : DataTypes.TIME,
-        latitud : DataTypes.STRING,
-        longitud : DataTypes.STRING
+        callePrincipalOrigen : DataTypes.STRING,
+        calleSecundariaOrigen : DataTypes.STRING,
+        referenciaOrigen : DataTypes.STRING,
+        horaInicioOrigen : DataTypes.TIME,
+        latitudOrigen : DataTypes.STRING,
+        longitudOrigen : DataTypes.STRING
     });
 
     /*Origen.associate = function(models) {
-        Chofer.hasMany(models.Encomienda,{
-            foreignKey : 'choferId',
-            as : 'encomiendas'
+        Origen.hasMany(models.Direccion,{
+            foreignKey : 'origenId',
+            as : 'direcciones'
         });
-    };*/
+    };*/   
+
+    Origen.associate = function(models){
+        Origen.belongsToMany(models.Encomienda,{
+            through: 'direccion',
+            foreignKey: 'origenId',
+            otherKey:'encomiendaId'
+        });
+    };
+
+
     return Origen;
 }

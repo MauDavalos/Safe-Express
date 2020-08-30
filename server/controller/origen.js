@@ -24,12 +24,12 @@ module.exports = {
             const origenCollection = await Origen
             .create({
 
-                callePrincipal : req.body.callePrincipal,
-                calleSecundaria : req.body.calleSecundaria,
-                referencia : req.body.referencia,
-                horaInicio : req.body.horaInicio,
-                latitud : req.body.latitud,
-                longitud : req.body.longitud
+                callePrincipalOrigen : req.body.callePrincipalOrigen,
+                calleSecundariaOrigen : req.body.calleSecundariaOrigen,
+                referenciaOrigen : req.body.referenciaOrigen,
+                horaInicioOrigen : req.body.horaInicioOrigen,
+                latitudOrigen : req.body.latitudOrigen,
+                longitudOrigen : req.body.longitudOrigen
             });
 
             res.status(201).send(origenCollection);
@@ -51,12 +51,12 @@ module.exports = {
             if(origenCollection){
 
                 const updatedOrigen = await Origen.update({
-                    callePrincipal : req.body.callePrincipal,
-                    calleSecundaria : req.body.calleSecundaria,
-                    referencia : req.body.referencia,
-                    horaInicio : req.body.horaInicio,
-                    latitud : req.body.latitud,
-                    longitud : req.body.longitud                 
+                    callePrincipalOrigen : req.body.callePrincipalOrigen,
+                    calleSecundariaOrigen : req.body.calleSecundariaOrigen,
+                    referenciaOrigen : req.body.referenciaOrigen,
+                    horaInicioOrigen : req.body.horaInicioOrigen,
+                    latitudOrigen : req.body.latitudOrigen,
+                    longitudOrigen : req.body.longitudOrigen                 
                 });
 
                 res.status(201).send(updatedOrigen)

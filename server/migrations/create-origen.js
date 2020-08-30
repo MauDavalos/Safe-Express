@@ -7,27 +7,27 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        callePrincipal: {
+        callePrincipalOrigen: {
             type: Sequelize.STRING,
             allowNull: false,
           },
-        calleSecundaria: {
+        calleSecundariaOrigen: {
             type: Sequelize.STRING,
             allowNull: false,
         },
-        referencia: {
+        referenciaOrigen: {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        horaInicio: {
+        horaInicioOrigen: {
             type: Sequelize.TIME,
             allowNull: false,
           },
-        latitud: {
+        latitudOrigen: {
           type: Sequelize.STRING,
           allowNull: false,
         },
-        longitud: {
+        longitudOrigen: {
             type: Sequelize.STRING,
             allowNull: false,
           },
@@ -38,7 +38,7 @@ module.exports = {
         updatedAt: {
           allowNull: false,
           type: Sequelize.DATE,
-        },
+        }
       }),
     down: (queryInterface /* , Sequelize */) => queryInterface.dropTable('Origens'),
   };
