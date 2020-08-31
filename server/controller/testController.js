@@ -7,7 +7,6 @@ const pool = mysql.createConnection({
     database: "heroku_d226da270d3c37c?reconnect=true",
     host: "us-cdbr-east-02.cleardb.com",
     dialect: "mysql"
-});
 
 const getData = async (req, res) => {
     console.log('entro');
