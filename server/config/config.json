@@ -8,19 +8,17 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "glxhbxtjngvycx",
-    "password": "3644b2b66f8cc08a16bd93de0cbf51c6b32bee539411d2a02a252012fc439a76",
-    "database": "d3evr6c6a4bs8r",
-    "host": "ec2-54-236-146-234.compute-1.amazonaws.com:5432",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "username": "root",
+    "password": "",
+    "database": "db_safe_translate",
+    "host": "localhost",
+    "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "username": "b3991f24f4b42b",
+    "password": "1107d0f0",
+    "database": "heroku_d226da270d3c37c?reconnect=true",
+    "host": "us-cdbr-east-02.cleardb.com",
+    "dialect": "mysql"
   }
 }

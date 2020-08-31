@@ -1,12 +1,12 @@
 'use strict';
-const {Pool} = require('pg');
+const mysql = require('mysql');
 
-const pool = new Pool({
-    host: "localhost",
-    user: "postgres",
-    password: "mau",
-    database: "db_hoy",
-    port: 5432
+const pool = mysql.createConnection({
+    username: "b3991f24f4b42b",
+    password: "1107d0f0",
+    database: "heroku_d226da270d3c37c?reconnect=true",
+    host: "us-cdbr-east-02.cleardb.com",
+    dialect: "mysql"
 });
 
 const getData = async (req, res) => {
