@@ -6,7 +6,7 @@ module.exports = {
 
         try {
 
-            const userCollection = await User.find({});
+            const userCollection = await User.findAll({});
 
             res.status(201).send(userCollection);
 
@@ -39,13 +39,14 @@ module.exports = {
 
         try{
             const userCollection = await User.find({
-                id : req.params.userId
+              
+                where: {id : req.params.userId}
             });
 
             if(userCollection){
 
                 const updatedUser = await User.update({
-                    id : req.body.email
+                    email : req.body.email
                 });
 
                 res.status(201).send(updatedUser)
